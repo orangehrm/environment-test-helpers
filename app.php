@@ -8,7 +8,6 @@ createDB();
 createTable();
 insertData();
 checkData();
-dropDB();
 
 function createDB(){
     global $connection;
@@ -69,16 +68,4 @@ function checkData(){
     else{
         print("false\n");
     }
-}
-
-function dropDB(){
-    global $connection;
-    $sql = "DROP DATABASE php_simple";
-    if($connection->executeQuery($sql)){
-        print("true\n");
-    }
-    else{
-        print("false\n");
-    }
-    $connection->closeConnection();
 }
